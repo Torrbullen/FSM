@@ -127,15 +127,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Bar.cpp" />
+    <ClCompile Include="Drinking.cpp" />
+    <ClCompile Include="Eating.cpp" />
     <ClCompile Include="FSM.cpp" />
     <ClCompile Include="Miner.cpp" />
     <ClCompile Include="Mining.cpp" />
+    <ClCompile Include="Moving.cpp" />
+    <ClCompile Include="Sleeping.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bar.h" />
+    <ClInclude Include="Drinking.h" />
+    <ClInclude Include="Eating.h" />
     <ClInclude Include="Miner.h" />
     <ClInclude Include="Mining.h" />
+    <ClInclude Include="Moving.h" />
+    <ClInclude Include="Sleeping.h" />
     <ClInclude Include="State.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

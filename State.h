@@ -1,7 +1,7 @@
 #pragma once
 
 class Miner;
-
+static int movedelay = 0;
 class State {
 public:
 	virtual ~State() {}

@@ -1,21 +1,21 @@
 #pragma once
 #include "State.h"
 
-class Bar : public State {
+class Drinking : public State {
 public:
-	static Bar& Instance()
+	static Drinking& Instance()
 	{
-		static Bar instance;
+		static Drinking instance;
 		return instance;
 	};
 private:
-	Bar() {}
+	Drinking() {}
 
 public:
 	virtual void Enter(Miner* pMiner);
 	virtual void Execute(Miner* pMiner);
 	virtual void Exit(Miner* pMiner);
 
-	Bar(Bar const&) = delete;
-	void operator=(Bar const&) = delete;
+	Drinking(Drinking const&) = delete;
+	void operator=(Drinking const&) = delete;
 };

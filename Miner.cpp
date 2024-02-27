@@ -1,20 +1,25 @@
 #include "Miner.h"
 #include "Mining.h"
-#include "Bar.h"
-#include "State.h"
-#include <assert.h>
+#include "Drinking.h"
+#include "Eating.h"
+#include "Sleeping.h"
+#include "Moving.h"
+
+
 
 Miner::Miner(int ID) {
 	m_pCurrentState = &Mining::Instance();
+	m_pLastState = &Mining::Instance();
 	id = ID;
 	m_GoldCarried = 0;
-	m_Fatigue = 100;
-	m_Thirst = 100;
-	m_Hunger = 100;
+	m_Fatigue = rand() % 50 + 50;
+	m_Thirst = rand() % 50 + 50;
+	m_Hunger = rand() % 50 + 50;
 }
 
 void Miner::ChangeState(State* pNewState) {
 	assert(m_pCurrentState && pNewState);
+	//IMPLEMENT LAST STATE
 	m_pCurrentState->Exit(this);
 	m_pCurrentState = pNewState;
 	m_pCurrentState->Enter(this);
@@ -163,7 +168,44 @@ void Miner::Update() {
 		<< "hunger: " << this->GetHunger() << "\n"
 		<< "thirst: " << this->GetThirst() << "\n"
 		<< "fatigue: " << this->GetFatigue() << "\n";
-	if (m_Thirst < 50 && m_pCurrentState != &Bar::Instance()) {
-		ChangeState(&Bar::Instance());
+
+	int emergent = (std::min)((std::min)(m_Thirst, m_Hunger), m_Fatigue);
+
+	if (m_Thirst < 50 && m_pCurrentState != &Drinking::Instance()) {
+		if (m_pCurrentState != &Moving::Instance()) {
+			ChangeState(&Moving::Instance());
+		}
+		if (movedelay > 2) {
+			ChangeState(&Drinking::Instance());
+			movedelay = 0;
+		}
+	}
+	else if (m_Hunger < 50 && m_pCurrentState != &Eating::Instance()) {
+		if (m_pCurrentState != &Moving::Instance()) {
+			ChangeState(&Moving::Instance());
+		}
+		if (movedelay > 2) {
+			ChangeState(&Eating::Instance());
+			movedelay = 0;
+		}
+	}
+	else if (m_Fatigue < 50 && m_pCurrentState != &Sleeping::Instance()) {
+		if (m_pCurrentState != &Moving::Instance()) {
+			ChangeState(&Moving::Instance());
+		}
+		if (movedelay > 2) {
+			ChangeState(&Sleeping::Instance());
+			movedelay = 0;
+		}
+	}
+	else if (m_GoldCarried < 100)
+	{
+		if (m_pCurrentState != &Moving::Instance()) {
+			ChangeState(&Moving::Instance());
+		}
+		if (movedelay > 2) {
+			ChangeState(&Mining::Instance());
+			movedelay = 0;
+		}
 	}
 }

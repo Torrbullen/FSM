@@ -5,13 +5,20 @@
 #include <cstring>
 #include <map>
 #include <iostream>
-
+#include <stdlib.h>
+#include <Windows.h>
+#include <iostream>
+#include <assert.h>
+#include <chrono>
+#include <ctime>
+#include <algorithm>
 
 
 class Miner {
 
 private:
 	State* m_pCurrentState;
+	State* m_pLastState;
 	std::string m_Location;
 	int id;
 	int m_GoldCarried;

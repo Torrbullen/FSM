@@ -1,10 +1,4 @@
-
 #include "Miner.h"
-#include <Windows.h>
-#include <stdlib.h>
-
-#include <iostream>
-
 
 Miner miner(1);
 int main()
@@ -14,6 +8,6 @@ int main()
 		miner.Update();
 
 		//update cycle
-		Sleep(50);
+		Sleep(200);
 	}
 }
