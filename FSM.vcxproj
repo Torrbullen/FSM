@@ -130,14 +130,18 @@
     <ClCompile Include="Drinking.cpp" />
     <ClCompile Include="Eating.cpp" />
     <ClCompile Include="FSM.cpp" />
+    <ClCompile Include="Lumbering.cpp" />
     <ClCompile Include="Miner.cpp" />
     <ClCompile Include="Mining.cpp" />
     <ClCompile Include="Moving.cpp" />
+    <ClCompile Include="Shopping.cpp" />
+    <ClCompile Include="Shopping.h" />
     <ClCompile Include="Sleeping.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Drinking.h" />
     <ClInclude Include="Eating.h" />
+    <ClInclude Include="Lumbering.h" />
     <ClInclude Include="Miner.h" />
     <ClInclude Include="Mining.h" />
     <ClInclude Include="Moving.h" />

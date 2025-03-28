@@ -1,7 +1,8 @@
 #pragma once
 #include "State.h"
 
-class Eating : public State {
+class Eating : public State 
+{
 public:
 	static Eating& Instance()
 	{
@@ -15,6 +16,7 @@ public:
 	virtual void Enter(Miner* pMiner);
 	virtual void Execute(Miner* pMiner);
 	virtual void Exit(Miner* pMiner);
+	virtual const char* Statename();
 
 	Eating(Eating const&) = delete;
 	void operator=(Eating const&) = delete;

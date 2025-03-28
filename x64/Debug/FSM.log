@@ -1,2 +1,11 @@
-﻿  Miner.cpp
+﻿  Drinking.cpp
+  Eating.cpp
+  FSM.cpp
+  Lumbering.cpp
+  Miner.cpp
+  Mining.cpp
+  Moving.cpp
+  Shopping.cpp
+  Sleeping.cpp
+  Generating Code...
   FSM.vcxproj -> C:\Users\Norras-2\source\repos\FSM\x64\Debug\FSM.exe

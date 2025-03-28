@@ -1,7 +1,8 @@
 #pragma once
 #include "State.h"
 
-class Mining : public State {
+class Mining : public State 
+{
 public:
 	static Mining& Instance()
 	{
@@ -15,6 +16,7 @@ public:
 	virtual void Enter(Miner* pMiner);
 	virtual void Execute(Miner* pMiner);
 	virtual void Exit(Miner* pMiner);
+	virtual const char* Statename();
 
 	Mining(Mining const&) = delete;
 	void operator=(Mining const&) = delete;

@@ -1,16 +1,16 @@
 #pragma once
 #include "State.h"
 
-class Drinking : public State 
+class Shopping : public State
 {
 public:
-	static Drinking& Instance()
+	static Shopping& Instance()
 	{
-		static Drinking instance;
+		static Shopping instance;
 		return instance;
 	};
 private:
-	Drinking() {}
+	Shopping() {}
 
 public:
 	virtual void Enter(Miner* pMiner);
@@ -18,6 +18,6 @@ public:
 	virtual void Exit(Miner* pMiner);
 	virtual const char* Statename();
 
-	Drinking(Drinking const&) = delete;
-	void operator=(Drinking const&) = delete;
+	Shopping(Shopping const&) = delete;
+	void operator=(Shopping const&) = delete;
 };

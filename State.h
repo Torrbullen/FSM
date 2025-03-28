@@ -1,12 +1,15 @@
 #pragma once
 
+const int timestepspeed = 5;
+
 class Miner;
-static int movedelay = 0;
-class State {
+class State 
+{
 public:
 	virtual ~State() {}
 	virtual void Enter(Miner*) = 0;
 	virtual void Execute(Miner*) = 0;
 	virtual void Exit(Miner*) = 0;
+	virtual const char* Statename() = 0;
 
 };
